@@ -1,16 +1,103 @@
-# React + Vite
+# 🥗 Sanket's Veg Kitchen
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive vegetarian restaurant website built using **React** and **Vite**. The application provides an attractive user interface for exploring delicious vegetarian dishes, restaurant information, and an easy-to-use browsing experience.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🌐 **Website:** https://sankets-veg-kitchen.netlify.app/
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🍽️ Responsive restaurant website
+- 🥗 Browse vegetarian food items
+- 📱 Mobile-friendly design
+- ⚡ Fast performance with Vite
+- 🎨 Modern React UI
+- 🧭 Smooth navigation
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React.js
+- Vite
+- JavaScript (ES6+)
+- HTML5
+- CSS3
+
+## 📂 Project Structure
+
+```
+src/
+├── assets/
+├── components/
+├── pages/
+├── App.jsx
+├── main.jsx
+public/
+package.json
+vite.config.js
+```
+
+## 📦 Installation
+
+Clone the repository:
+
+```bash
+git clone <your-repository-url>
+```
+
+Navigate to the project folder:
+
+```bash
+cd sankets-veg-kitchen
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+Preview the production build:
+
+```bash
+npm run preview
+```
+
+## 🚀 Deployment
+
+This project is deployed on **Netlify**.
+
+Live URL:
+https://sankets-veg-kitchen.netlify.app/
+
+## 📸 Screenshots
+
+Add screenshots of your homepage and menu here.
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to fork this repository and submit a pull request.
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+### 👨‍💻 Developed by
+
+**Sanket Bacchanna**
+
+If you like this project, don't forget to ⭐ the repository!
