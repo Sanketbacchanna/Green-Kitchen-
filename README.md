@@ -84,7 +84,8 @@ https://sankets-veg-kitchen.netlify.app/
 
 ## 📸 Screenshots
 
-Add screenshots of your homepage and menu here.
+<img width="1916" height="870" alt="image" src="https://github.com/user-attachments/assets/1f034dfc-00aa-4fca-a321-0ba7aa9cfeb8" />
+
 
 ## 🤝 Contributing
 
