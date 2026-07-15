@@ -31,7 +31,7 @@ const Login = () => {
                 className="max-w-md w-full"
             >
                 <div className="text-center mb-8">
-                    <h1 className="text-3xl md:text-4xl font-bold text-dark mb-2 font-serif">Sanket's Green Kitchen</h1>
+                    <h1 className="text-3xl md:text-4xl font-bold text-dark mb-2 font-serif">Amma's Kitchen</h1>
                     <p className="text-gray-600 text-lg">Login to order delicious food</p>
                 </div>
 

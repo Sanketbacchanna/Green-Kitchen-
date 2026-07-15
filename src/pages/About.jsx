@@ -38,7 +38,7 @@ const About = () => {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-center text-white"
                     >
-                        <h1 className="text-5xl font-bold font-serif mb-4">About Sanket's Green Kitchen</h1>
+                        <h1 className="text-5xl font-bold font-serif mb-4">About Amma's Kitchen</h1>
                         <p className="text-xl text-gray-400 max-w-2xl mx-auto">
                             Serving authentic vegetarian flavors with love and passion.
                         </p>
@@ -60,7 +60,7 @@ const About = () => {
                             "Hello, my name is <span className="text-primary font-bold">Sanket</span>, and I am a professional Chef with over 20 years of experience in the culinary arts.
                         </p>
                         <p>
-                            Sanket's Green Kitchen is my dream project, born from a desire to showcase the incredible versatility and flavor of vegetarian cuisine. I believe that healthy food should never compromise on taste."
+                            Amma's Kitchen is my dream project, born from a desire to showcase the incredible versatility and flavor of vegetarian cuisine. I believe that healthy food should never compromise on taste."
                         </p>
                         <p>
                             Along with my team, including our Head Chef Sanket, we are dedicated to bringing you the freshest ingredients and the most authentic recipes. Welcome to our family!

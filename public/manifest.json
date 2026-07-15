@@ -1,7 +1,7 @@
 {
-    "name": "Sanket's Green Kitchen",
+    "name": "Amma's Kitchen",
     "short_name": "Sanket's Green",
-    "description": "Order delicious vegetarian food from Sanket's Green Kitchen",
+    "description": "Order delicious vegetarian food from Amma's Kitchen",
     "start_url": "/",
     "scope": "/",
     "display": "standalone",

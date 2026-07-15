@@ -12,7 +12,7 @@ const Footer = () => {
                 <div className="flex flex-col md:flex-row justify-between items-center">
                     <div className="mb-4 md:mb-0">
                         <div>
-                            <h3 className="text-xl font-bold text-secondary mb-2 font-serif">SANKET'S GREEN KITCHEN</h3>
+                            <h3 className="text-xl font-bold text-secondary mb-2 font-serif">Amma's Kitchen</h3>
                             <p className="text-sm text-gray-400">Pure Vegetarian Delights</p>
                             <p className="text-sm text-gray-400 mt-1">📞 9353350845</p>
                         </div>            </div>
@@ -24,7 +24,7 @@ const Footer = () => {
                     </div>
 
                     <div className="text-sm text-gray-500 text-center md:text-right">
-                        <div>&copy; {new Date().getFullYear()} Sanket's Green Kitchen. All rights reserved.</div>
+                        <div>&copy; {new Date().getFullYear()} Amma's Kitchen. All rights reserved.</div>
                         <div className="text-xs text-gray-600 mt-1">
                             v0.0.3 | {isInstalled ? 'App Installed' : 'Web Version'} | {isIOS ? 'iOS' : 'Android/PC'}
                             {!isInstalled && !isIOS && !deferredPrompt && ' (Manual Install)'}

@@ -33,7 +33,7 @@ const Navbar = () => {
                     {/* Logo */}
                     <Link to="/" className="flex-shrink-0">
                         <h1 className="text-xl md:text-2xl font-bold text-primary font-serif tracking-wider">
-                            SANKET'S GREEN KITCHEN
+                            Amma's Kitchen
                         </h1>
                     </Link>
 
