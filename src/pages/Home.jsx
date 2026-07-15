@@ -42,7 +42,7 @@ const Home = () => {
                         </motion.div>
 
                         <h1 className="text-6xl md:text-7xl font-bold font-serif mb-6 leading-tight">
-                            Welcome to <span className="text-primary">Sanket's</span> Green <span className="text-secondary">Kitchen</span>
+                            Welcome to <span className="text-primary">Amma's</span> <span className="text-secondary">Kitchen</span>
                         </h1>
                         <p className="text-2xl text-gray-300 mb-8 leading-relaxed">
                             Fresh paneer, aromatic rice, and crispy starters. Crafted for the true food lover.

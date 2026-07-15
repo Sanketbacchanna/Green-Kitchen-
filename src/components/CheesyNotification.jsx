@@ -11,8 +11,8 @@ const CheesyNotification = () => {
         // Set a timer to trigger the notification
         const timer = setTimeout(() => {
             if (Notification.permission === 'granted') {
-                new Notification("Hey! Your tummy is calling... 🍗", {
-                    body: "Pick up! Some hot food is waiting for you at Sanket's!",
+                new Notification("Hey! Your tummy is calling... �️", {
+                    body: "Pick up! Some hot food is waiting for you at Amma's Kitchen!",
                     icon: '/pwa-192x192.png', // Use PWA icon
                     vibrate: [200, 100, 200]
                 });
