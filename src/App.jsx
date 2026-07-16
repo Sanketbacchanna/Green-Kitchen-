@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
 import { InstallProvider } from './context/InstallContext';
+import { MenuProvider } from './context/MenuContext';
 import ErrorBoundary from './components/ErrorBoundary';
 import Layout from './components/Layout';
 import Home from './pages/Home';
@@ -18,6 +19,7 @@ import InstallPrompt from './components/InstallPrompt';
 import ForgotPassword from './pages/ForgotPassword';
 import ReloadPrompt from './components/ReloadPrompt';
 import CheesyNotification from './components/CheesyNotification';
+import AdminDashboard from './pages/AdminDashboard';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -78,6 +80,14 @@ function AppContent() {
               </ProtectedRoute>
             }
           />
+          <Route
+            path="admin"
+            element={
+              <ProtectedRoute>
+                <AdminDashboard />
+              </ProtectedRoute>
+            }
+          />
           <Route path="*" element={
             <div className="flex items-center justify-center min-h-screen">
               <div className="text-center">
@@ -99,9 +109,11 @@ function App() {
     <ErrorBoundary>
       <AuthProvider>
         <CartProvider>
-          <InstallProvider>
-            <AppContent />
-          </InstallProvider>
+          <MenuProvider>
+            <InstallProvider>
+              <AppContent />
+            </InstallProvider>
+          </MenuProvider>
         </CartProvider>
       </AuthProvider>
     </ErrorBoundary>

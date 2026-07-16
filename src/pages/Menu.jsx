@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Filter } from 'lucide-react';
 import FoodCard from '../components/FoodCard';
-import { menuItems, menuCategories } from '../data/menuData';
+import { useMenu } from '../context/MenuContext';
 
 const Menu = () => {
+    const { menuItems, menuCategories } = useMenu();
     const [selectedCategory, setSelectedCategory] = useState('All');
 
     const filteredItems = selectedCategory === 'All'

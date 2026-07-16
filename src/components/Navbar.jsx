@@ -99,6 +99,14 @@ const Navbar = () => {
                                             className="absolute right-0 mt-2 w-48 bg-dark-lighter rounded-lg shadow-xl py-2 border border-gray-700"
                                         >
                                             <Link
+                                                to="/admin"
+                                                onClick={() => setShowUserMenu(false)}
+                                                className="flex items-center gap-2 px-4 py-2 text-gray-300 hover:bg-white/10"
+                                            >
+                                                <User size={18} />
+                                                <span>Admin Dashboard</span>
+                                            </Link>
+                                            <Link
                                                 to="/profile"
                                                 onClick={() => setShowUserMenu(false)}
                                                 className="flex items-center gap-2 px-4 py-2 text-gray-300 hover:bg-white/10"
@@ -175,6 +183,13 @@ const Navbar = () => {
 
                             {isAuthenticated ? (
                                 <>
+                                    <Link
+                                        to="/admin"
+                                        onClick={() => setIsOpen(false)}
+                                        className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                                    >
+                                        Admin Dashboard
+                                    </Link>
                                     <Link
                                         to="/profile"
                                         onClick={() => setIsOpen(false)}

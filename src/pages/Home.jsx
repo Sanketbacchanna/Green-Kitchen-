@@ -2,9 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Star, Flame } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { menuItems } from '../data/menuData';
+import { useMenu } from '../context/MenuContext';
 
 const Home = () => {
+    const { menuItems } = useMenu();
     const popularItems = menuItems.filter(item => item.popular).slice(0, 3);
 
     return (
