@@ -10,7 +10,7 @@ const OrderSuccess = () => {
 
     // States: 'redirecting', 'waiting', 'preparing', 'delivering'
     const [status, setStatus] = useState('redirecting');
-    const [countdown, setCountdown] = useState(5);
+    const [countdown, setCountdown] = useState(10);
 
     useEffect(() => {
         if (!whatsappUrl) return;
@@ -41,11 +41,11 @@ const OrderSuccess = () => {
             }, 10000);
         }
         
-        // 3. Preparing Food (simulated 15 seconds representing 10-15 mins)
+        // 3. Preparing Food (10-15 mins)
         else if (status === 'preparing') {
             timer = setTimeout(() => {
                 setStatus('delivering');
-            }, 15000);
+            }, 10 * 60 * 1000);
         }
 
         return () => {
@@ -101,6 +101,7 @@ const OrderSuccess = () => {
                         <p className="text-gray-400 mb-6">
                             Please wait while the restaurant confirms your order. (Simulating admin response...)
                         </p>
+                        <button onClick={() => setStatus('preparing')} className="mt-2 px-3 py-1 bg-gray-800 text-xs text-gray-400 hover:text-white rounded-md transition-colors">Skip Admin Wait (Dev Mode)</button>
                     </motion.div>
                 );
             case 'preparing':
@@ -121,8 +122,9 @@ const OrderSuccess = () => {
                         <h1 className="text-3xl font-bold text-gray-100 mb-3">Food is Preparing!</h1>
                         <p className="text-gray-400 mb-6">
                             The admin accepted your order. Our chefs are cooking your delicious food.
-                            (Simulating 10-15 minutes wait...)
+                            Wait time: 10-15 minutes.
                         </p>
+                        <button onClick={() => setStatus('delivering')} className="mt-2 px-3 py-1 bg-gray-800 text-xs text-gray-400 hover:text-white rounded-md transition-colors">Skip Cooking Time (Dev Mode)</button>
                     </motion.div>
                 );
             case 'delivering':
