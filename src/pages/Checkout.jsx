@@ -57,11 +57,11 @@ const Checkout = () => {
         localStorage.setItem('lastDeliveryAddress', formData.address);
 
         // 5. Navigate to success page and pass whatsapp details
-        navigate('/order-success', { 
-            state: { 
+        navigate('/order-success', {
+            state: {
                 orderId: 'ORD-' + Math.floor(Math.random() * 1000000),
-                whatsappUrl: whatsappUrl 
-            } 
+                whatsappUrl: whatsappUrl
+            }
         });
     };
 
@@ -157,7 +157,7 @@ const Checkout = () => {
                             >
                                 {loading ? 'Opening WhatsApp...' : (
                                     <>
-                                        <span>Place Order via WhatsApp</span>
+                                        <span>Place Order</span>
                                     </>
                                 )}
                             </button>
