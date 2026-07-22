@@ -154,6 +154,20 @@ const Checkout = () => {
         localStorage.setItem('orders', JSON.stringify(existingOrders));
         localStorage.setItem('lastDeliveryAddress', formData.address);
 
+        // Try to persist the order to a backend server if available
+        try {
+            fetch('/api/orders', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(newOrder)
+            }).catch(err => {
+                // ignore network errors; server is optional
+                console.warn('Could not POST order to server', err);
+            });
+        } catch (err) {
+            console.warn('Order POST failed', err);
+        }
+
         // 5. Navigate to success page and pass whatsapp details
         navigate('/order-success', {
             state: {

@@ -56,7 +56,21 @@ const OrderSuccess = () => {
     useEffect(() => {
         if (status === 'redirecting' || orderId === 'N/A') return;
 
-        const checkOrderStatus = () => {
+        const checkOrderStatus = async () => {
+            // Try server first
+            try {
+                const res = await fetch(`/api/orders/${encodeURIComponent(orderId)}`);
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data && data.status && data.status !== status) {
+                        setStatus(data.status);
+                        return;
+                    }
+                }
+            } catch (err) {
+                // server not available; fall back to localStorage
+            }
+
             const orders = JSON.parse(localStorage.getItem('orders') || '[]');
             const currentOrder = orders.find(o => o.id === orderId);
             if (currentOrder && currentOrder.status !== status) {
@@ -73,7 +87,7 @@ const OrderSuccess = () => {
         };
 
         window.addEventListener('storage', handleStorageChange);
-        const interval = setInterval(checkOrderStatus, 1000);
+        const interval = setInterval(checkOrderStatus, 2000);
 
         return () => {
             window.removeEventListener('storage', handleStorageChange);
