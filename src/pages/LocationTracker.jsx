@@ -28,7 +28,14 @@ const LocationTracker = () => {
   const mapInstance = useRef(null);
   const routingControl = useRef(null);
   
-  const [startStr, setStartStr] = useState(() => localStorage.getItem('restaurantAddress') || 'Amma\'s Kitchen, Mumbai');
+  const [startStr, setStartStr] = useState(() => {
+    const saved = localStorage.getItem('restaurantAddress');
+    if (!saved || saved === "Amma's Kitchen, Mumbai") {
+      localStorage.setItem('restaurantAddress', "Amma's Kitchen, Bidar, Karnataka");
+      return "Amma's Kitchen, Bidar, Karnataka";
+    }
+    return saved;
+  });
   const [destinationStr, setDestinationStr] = useState(() => localStorage.getItem('lastDeliveryAddress') || '');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -37,15 +44,15 @@ const LocationTracker = () => {
   useEffect(() => {
     if (!mapRef.current) return;
 
-    // Initialize map
-    mapInstance.current = L.map(mapRef.current).setView([20.5937, 78.9629], 5); // Default to India
+    // Initialize map focused on Bidar, Karnataka
+    mapInstance.current = L.map(mapRef.current).setView([17.9104, 77.5199], 13);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(mapInstance.current);
 
     // If both addresses are present in localStorage, trigger auto track
-    const savedStart = localStorage.getItem('restaurantAddress') || 'Amma\'s Kitchen, Mumbai';
+    const savedStart = localStorage.getItem('restaurantAddress') || 'Amma\'s Kitchen, Bidar, Karnataka';
     const savedDest = localStorage.getItem('lastDeliveryAddress');
     
     if (savedStart && savedDest) {

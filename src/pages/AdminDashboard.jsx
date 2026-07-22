@@ -7,7 +7,14 @@ const AdminDashboard = () => {
     const [isEditing, setIsEditing] = useState(false);
     const [isAdding, setIsAdding] = useState(false);
     const [currentItem, setCurrentItem] = useState(null);
-    const [restaurantAddress, setRestaurantAddress] = useState(() => localStorage.getItem('restaurantAddress') || 'Amma\'s Kitchen, Mumbai');
+    const [restaurantAddress, setRestaurantAddress] = useState(() => {
+        const saved = localStorage.getItem('restaurantAddress');
+        if (!saved || saved === "Amma's Kitchen, Mumbai") {
+            localStorage.setItem('restaurantAddress', "Amma's Kitchen, Bidar, Karnataka");
+            return "Amma's Kitchen, Bidar, Karnataka";
+        }
+        return saved;
+    });
 
     // Initial state for new item
     const initialItemState = {

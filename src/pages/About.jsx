@@ -105,7 +105,7 @@ const About = () => {
                             <div>
                                 <h3 className="font-bold text-dark mb-1">Address</h3>
                                 <p className="text-gray-600 text-sm">
-                                    123 Food Street, Gourmet District, Mumbai - 400001
+                                    123 Food Street, Gourmet District, Bidar, Karnataka - 585401
                                 </p>
                             </div>
                         </div>
