@@ -98,7 +98,7 @@ const Home = () => {
             </div>
 
             {/* Popular Items Section */}
-            <div className="bg-light py-20">
+            <div id="today-special" className="bg-light py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -164,7 +164,7 @@ const Home = () => {
             </div>
 
             {/* Testimonials Section */}
-            <div className="bg-gradient-to-br from-dark to-gray-900 text-white py-20">
+            <div id="reviews" className="bg-gradient-to-br from-dark to-gray-900 text-white py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}

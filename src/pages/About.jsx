@@ -91,8 +91,34 @@ const About = () => {
                     })}
                 </div>
 
+                {/* FAQs */}
+                <motion.div
+                    id="faqs"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="bg-white rounded-2xl shadow-lg p-8 mb-8"
+                >
+                    <h2 className="text-3xl font-bold text-dark mb-6 text-center font-serif">Frequently Asked Questions</h2>
+                    <div className="space-y-4 text-gray-700">
+                        <div>
+                            <h3 className="font-semibold text-dark">Do you offer vegetarian-only food?</h3>
+                            <p className="text-sm">Yes, all our dishes are vegetarian and prepared with fresh, homemade ingredients.</p>
+                        </div>
+                        <div>
+                            <h3 className="font-semibold text-dark">How long does delivery take?</h3>
+                            <p className="text-sm">We typically deliver within 30–45 minutes depending on your location.</p>
+                        </div>
+                        <div>
+                            <h3 className="font-semibold text-dark">Can I order for a family gathering?</h3>
+                            <p className="text-sm">Absolutely. We can prepare larger quantities for events and special occasions.</p>
+                        </div>
+                    </div>
+                </motion.div>
+
                 {/* Contact Info */}
                 <motion.div
+                    id="contact"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
