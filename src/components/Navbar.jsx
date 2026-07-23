@@ -15,10 +15,13 @@ const Navbar = () => {
     const { isAuthenticated, user, logout } = useAuth();
     const { isInstalled, deferredPrompt, isIOS, setShowBanner } = useInstall();
 
-    const links = [
+    const primaryLinks = [
         { name: 'Home', path: '/' },
-        { name: 'About Us', path: '/about' },
         { name: 'Menu', path: '/menu' },
+        { name: 'About Us', path: '/about' },
+    ];
+
+    const secondaryLinks = [
         { name: 'History', path: '/about#history' },
         { name: "Today's Special", path: '/#today-special' },
         { name: 'Gallery', path: '/#gallery' },
@@ -43,7 +46,7 @@ const Navbar = () => {
     return (
         <nav className="w-full bg-dark/80 backdrop-blur-md text-light sticky top-0 z-50 shadow-lg border-b border-white/10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-20">
+                <div className="flex items-center justify-between h-24">
                     {/* Logo */}
                     <Link to="/" className="flex-shrink-0">
                         <h1 className="text-xl md:text-2xl font-bold text-primary font-serif tracking-wider">
@@ -52,14 +55,14 @@ const Navbar = () => {
                     </Link>
 
                     {/* Desktop Menu */}
-                    <div className="hidden md:block">
-                        <div className="ml-10 flex items-baseline space-x-3 lg:space-x-5">
-                            {links.map((link) => (
+                    <div className="hidden lg:block flex-1">
+                        <div className="ml-10 flex items-center gap-8">
+                            {primaryLinks.map((link) => (
                                 <Link
                                     key={link.name}
                                     to={link.path}
                                     className={clsx(
-                                        'px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300',
+                                        'px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 whitespace-nowrap',
                                         isActiveLink(link.path)
                                             ? 'text-primary'
                                             : 'text-gray-300 hover:text-secondary'
@@ -68,11 +71,67 @@ const Navbar = () => {
                                     {link.name}
                                 </Link>
                             ))}
+                            
+                            {/* Secondary Links Dropdown */}
+                            <div className="relative group">
+                                <button className="px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-secondary transition-colors whitespace-nowrap">
+                                    More
+                                </button>
+                                <div className="absolute left-0 mt-0 w-48 bg-dark rounded-lg shadow-xl py-2 border border-gray-700 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200">
+                                    {secondaryLinks.map((link) => (
+                                        <Link
+                                            key={link.name}
+                                            to={link.path}
+                                            className="block px-4 py-2 text-sm text-gray-300 hover:bg-white/10 hover:text-secondary transition-colors"
+                                        >
+                                            {link.name}
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Tablet Menu - Hidden on mobile and large screens */}
+                    <div className="hidden md:block lg:hidden">
+                        <div className="ml-10 flex items-center gap-4">
+                            {primaryLinks.map((link) => (
+                                <Link
+                                    key={link.name}
+                                    to={link.path}
+                                    className={clsx(
+                                        'px-2 py-2 rounded-md text-sm font-medium transition-colors duration-300 whitespace-nowrap',
+                                        isActiveLink(link.path)
+                                            ? 'text-primary'
+                                            : 'text-gray-300 hover:text-secondary'
+                                    )}
+                                >
+                                    {link.name}
+                                </Link>
+                            ))}
+                            
+                            {/* Secondary Links Dropdown for Tablet */}
+                            <div className="relative group">
+                                <button className="px-2 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-secondary transition-colors whitespace-nowrap">
+                                    More
+                                </button>
+                                <div className="absolute left-0 mt-0 w-40 bg-dark rounded-lg shadow-xl py-2 border border-gray-700 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200">
+                                    {secondaryLinks.map((link) => (
+                                        <Link
+                                            key={link.name}
+                                            to={link.path}
+                                            className="block px-3 py-1.5 text-xs text-gray-300 hover:bg-white/10 hover:text-secondary transition-colors"
+                                        >
+                                            {link.name}
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     {/* Cart & User Menu */}
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-6">
                         {/* Install App Button */}
                         {!isInstalled && (
                             <button
@@ -179,13 +238,31 @@ const Navbar = () => {
                         className="md:hidden bg-dark border-b border-gray-700"
                     >
                         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                            {links.map((link) => (
+                            {primaryLinks.map((link) => (
                                 <Link
                                     key={link.name}
                                     to={link.path}
                                     onClick={() => setIsOpen(false)}
                                     className={clsx(
                                         'block px-3 py-2 rounded-md text-base font-medium',
+                                        isActiveLink(link.path)
+                                            ? 'text-primary bg-gray-900'
+                                            : 'text-gray-300 hover:text-white hover:bg-gray-700'
+                                    )}
+                                >
+                                    {link.name}
+                                </Link>
+                            ))}
+
+                            <div className="border-t border-gray-700 my-2"></div>
+
+                            {secondaryLinks.map((link) => (
+                                <Link
+                                    key={link.name}
+                                    to={link.path}
+                                    onClick={() => setIsOpen(false)}
+                                    className={clsx(
+                                        'block px-3 py-2 rounded-md text-sm font-medium',
                                         isActiveLink(link.path)
                                             ? 'text-primary bg-gray-900'
                                             : 'text-gray-300 hover:text-white hover:bg-gray-700'
