@@ -39,15 +39,33 @@ const Home = () => {
                                     <Star key={i} size={20} className="text-secondary fill-secondary" />
                                 ))}
                             </div>
-                            <span className="text-gray-300">Rated 4.8 by 5000+ customers</span>
+                            <span className="text-gray-300">★★★★★ 4.8 Rating</span>
                         </motion.div>
 
-                        <h1 className="text-6xl md:text-7xl font-bold font-serif mb-6 leading-tight">
-                            Welcome to <span className="text-primary">Amma's</span> <span className="text-secondary">Kitchen</span>
+                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-serif mb-6 leading-tight">
+                            Authentic Homemade Food,
+                            <br />
+                            Made with Love <span className="text-secondary">❤️</span>
                         </h1>
-                        <p className="text-2xl text-gray-300 mb-8 leading-relaxed">
-                            Fresh paneer, aromatic rice, and crispy starters. Crafted for the true food lover.
+                        <p className="text-2xl text-gray-300 mb-6 leading-relaxed">
+                            Fresh • Hygienic • Affordable
                         </p>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 max-w-2xl">
+                            <div className="rounded-2xl border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-sm">
+                                <p className="text-2xl font-bold text-secondary">★★★★★</p>
+                                <p className="text-sm text-gray-300">4.8 Rating</p>
+                            </div>
+                            <div className="rounded-2xl border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-sm">
+                                <p className="text-2xl font-bold text-secondary">500+</p>
+                                <p className="text-sm text-gray-300">Happy Customers</p>
+                            </div>
+                            <div className="rounded-2xl border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-sm">
+                                <p className="text-2xl font-bold text-secondary">20+</p>
+                                <p className="text-sm text-gray-300">Homemade Dishes</p>
+                            </div>
+                        </div>
+
                         <div className="flex flex-col sm:flex-row gap-4">
                             <Link
                                 to="/menu"
@@ -57,10 +75,10 @@ const Home = () => {
                                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                             </Link>
                             <Link
-                                to="/about"
+                                to="/menu"
                                 className="inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white rounded-full font-semibold text-lg hover:bg-white/20 transition-all duration-300"
                             >
-                                Learn More
+                                View Menu
                             </Link>
                         </div>
                     </motion.div>
